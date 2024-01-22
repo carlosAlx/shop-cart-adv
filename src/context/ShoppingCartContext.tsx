@@ -16,9 +16,9 @@ type CartItem = {
   quantity: number;
 };
 
-const ShoppingCartContext = createContext({});
+const ShoppingCartContext = createContext({} as ShoppingCartContext);
 
-export function useShoppingCard() {
+export function useShoppingCart() {
   return useContext(ShoppingCartContext);
 }
 
@@ -60,7 +60,7 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
     });
   }
 
-  function removeFromQuantity(id: number) {
+  function removeFromCart(id: number) {
     setCartItems((currItems) => {
       return currItems.filter((item) => item.id !== id);
     });
@@ -72,7 +72,7 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
         getItemQuantity,
         increaseCartQuantity,
         decreaseCartQuantity,
-        removeFromQuantity,
+        removeFromCart,
       }}
     >
       {children}
