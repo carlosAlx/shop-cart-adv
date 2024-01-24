@@ -9,7 +9,7 @@ type Props = {
 export function ShoppingCart({ isOpen }: Props) {
   const { closeCart, cartItems } = useShoppingCart();
   return (
-    <Offcanvas show={isOpen} onHide={closeCart} placement="end">
+    <Offcanvas open={false} show={isOpen} onHide={closeCart} placement="end">
       <Offcanvas.Header closeButton>
         <Offcanvas.Title>Cart</Offcanvas.Title>
       </Offcanvas.Header>

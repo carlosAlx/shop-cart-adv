@@ -4,12 +4,12 @@ import storeItems from "../data/items.json";
 import { formatCurrency } from "../utilities/formatCurrent";
 
 
-type CartItemProps = {
+type Props = {
   id: number;
   quantity: number;
 };
 
-export function CartItem({ id, quantity }: CartItemProps) {
+export function CartItem({ id, quantity }: Props) {
   const { removeFromCart } = useShoppingCart();
   const item = storeItems.find((i) => i.id === id);
   if (item == null) return null;

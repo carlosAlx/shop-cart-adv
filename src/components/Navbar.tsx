@@ -19,7 +19,8 @@ export function Navbar() {
         </Nav>
         {cartQuantity > 0 && (
           <Button
-            onCanPlay={openCart}
+      //      onCanPlay={openCart}
+            onClick={openCart}
             style={{ width: "3rem", height: "3rem", position: "relative" }}
             variant="outline-primary"
             className="rounded-circle"
